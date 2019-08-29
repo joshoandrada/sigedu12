@@ -1,0 +1,49 @@
+
+<td>
+<?php $can=0;?>
+<ul class="sf_admin_td_actions">
+
+<?php $idact=$visual->getOrden(); ?>
+
+<? if ($idact == 11 || $idact == 12 || $idact == 21 ){?>
+
+<li><?php echo button_to(('      Promo D'),'bvisual1/agregavisual1?idactividad='.$visual->getId().'&idrendida='.$sf_params->get('idrendida').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+
+<li><?php echo button_to(('      Promo I'),'bvisual1/agregavisual1?idactividad='.$visual->getId().'&idrendida='.$sf_params->get('idrendida').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+
+<li><?php echo button_to(('      Examen Final'),'bvisual1/agregavisual1?idactividad='.$visual->getId().'&idrendida='.$sf_params->get('idrendida').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+
+<li><?php echo button_to(('      Libre'),'bvisual1/agregavisual1?idactividad='.$visual->getId().'&idrendida='.$sf_params->get('idrendida').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+
+<?}else{?>
+<? if ($idact == 1 || $idact == 4 || $idact == 5 || $idact == 31 || $idact == 34 || $idact == 36 ){?>
+<li><?php echo button_to(('      Promo D'),'bvisual1/agregavisual1?idactividad='.$visual->getId().'&idrendida='.$sf_params->get('idrendida').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+
+<li><?php echo button_to(('      Promo I'),'bvisual1/agregavisual1?idactividad='.$visual->getId().'&idrendida='.$sf_params->get('idrendida').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+
+<li><?php echo button_to(('      Examen Final'),'bvisual1/agregavisual1?idactividad='.$visual->getId().'&idrendida='.$sf_params->get('idrendida').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+
+<?}else{?>
+<? if ($idact == 2 || $idact == 8 ){?>
+<li><?php echo button_to(('      Examen Final'),'bvisual1/agregavisual1?idactividad='.$visual->getId().'&idrendida='.$sf_params->get('idrendida').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+
+<li><?php echo button_to(('      Libre'),'bvisual1/agregavisual1?idactividad='.$visual->getId().'&idrendida='.$sf_params->get('idrendida').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+<?}else{?>
+<? if ($idact == 6 || $idact == 7 || $idact == 10 || $idact == 14 || $idact == 19 || $idact == 23 || $idact == 24 || $idact == 25 || $idact == 26 || $idact == 13 || $idact == 32){?>
+<li><?php echo button_to(('      Examen Final'),'bvisual1/agregavisual1?idactividad='.$visual->getId().'&idrendida='.$sf_params->get('idrendida').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+<?}?>
+<?}?>
+<?}?>
+<?}?>
+</ul>
+</td>

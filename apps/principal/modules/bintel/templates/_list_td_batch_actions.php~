@@ -1,0 +1,7 @@
+<td>
+<?php $can=0;?>
+<ul class="sf_admin_td_actions">
+<?php echo button_to(('     Agregar'),'bintel/agregaintel?idactividad='.$intelectual->getId().'&idcursada='.$sf_params->get('idcursada').'&orden='.$intelectual->getOrden(), array ('class' => 'sf_admin_action_create',))?>
+</li>
+</ul>
+</td>

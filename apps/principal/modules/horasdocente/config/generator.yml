@@ -1,0 +1,25 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      RelAnioActividad
+    theme:            default
+    fields:
+      id:                     { name: ID }
+      fk_anio_id:             { name: Año }
+      fk_actividad_id:        { name: Actividad }
+      fk_orientacion_id:      { name: Orientacion }
+      fk_turno_id:            { name: Turno }
+      horas:                  { name: Horas }
+
+    list:
+      display:        [fk_actividad_id, fk_orientacion_id, fk_anio_id, horas]
+      filters:        [fk_orientacion_id, fk_anio_id]
+      max_per_page:   8
+      title:          Lista de Materias
+      layout:         tabular
+      object_actions:
+         _edit: -
+
+    edit:
+        title: "Actualizar Horas"
+        display: [ horas]

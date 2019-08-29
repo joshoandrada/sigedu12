@@ -1,0 +1,7 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Auditiva
+    theme:            default
+    list:
+      max_per_page:   36 

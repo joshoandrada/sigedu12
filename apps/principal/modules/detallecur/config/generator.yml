@@ -1,0 +1,25 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Detallecursada
+    theme:            default
+    fields:
+      id:                     { name: ID }
+      fk_dcursada_id:         { name: Estado }
+      fk_alumno_id:           { name: Alumno }
+      fk_actividad_id:        { name: Actividad }
+      fk_cursada_id:          { name: Cursada }
+      result:                 { name: Resultado }
+      folio:                  { name: Folio }
+      libro:                  { name: Libro }
+      fecha:                  { name: Fecha }
+   
+    list:
+      display:        [id, Actividad, Alumno, Estado, =fk_cursada_id, Libro, Folio, result, fecha]
+      filters:        [_filtro_fk_alumno_id, fecha]
+      max_per_page:   10
+      title:          Lista de Cursadas
+      layout:         tabular
+    edit:
+        title: "Actualizar cursadas"
+        display: [ result, fecha, libro, folio]

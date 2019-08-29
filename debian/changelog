@@ -1,0 +1,12 @@
+alba (1.1-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Actualizacion del paquete para wheezy
+
+ -- ragnarok <ragnarok@jola.docksud.com.ar>  Mon, 20 Aug 2012 20:18:12 -0300
+
+alba (1.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Fernando Toledo <ftoledo@docksud.com.ar>  Thu, 12 Jan 2012 14:40:45 -0300

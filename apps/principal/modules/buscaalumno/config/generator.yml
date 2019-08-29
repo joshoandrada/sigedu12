@@ -1,0 +1,33 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Alumno
+    theme:            default
+    fields:
+      id:                     { name: ID }
+      nro_documento:          { name: Dni }
+      apellido_materno:       { name: Apellido y Nombre}
+      apellido:               { name: Apellido}
+      matricula:              { name: Matricula}
+      fk_carrera_id:          { name: Carrera}
+      carrera:                { name: Carrera}
+
+    list:
+      display:        [apellido_materno, nro_documento, carrera]
+      filters:        [apellido, nro_documento, fk_carrera_id]
+      max_per_page:   8
+      title:          Alumnos 
+      object_actions:
+        _edit:        ~
+        _delete:      ~
+      layout:         tabular
+
+    edit:
+      title:             Ficha Alumno
+      display:
+        "Datos Personales":     [dni, apellido_materno]
+      actions:
+       _list:              { name: Volver al listado }
+       _save_and_add:      { name: Guardar y agregar otro }
+       _delete:            { name: Borrar }
+       _save:              { name: Guardar}

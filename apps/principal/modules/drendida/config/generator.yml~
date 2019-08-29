@@ -1,0 +1,27 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Detallerendir
+    theme:            default
+    fields:
+      id:                     { name: ID }
+      result:                 { name: Nota }
+      fk_dcursada_id:         { name: Estado }
+      libro:                  { name: Libro }
+      folio:                  { name: Folio }
+      fecha:                  { name: Fecha }
+
+    list:
+      display:        [libro, result]
+      filters:        [libro, result]
+      max_per_page:   8
+      title:          Lista de Materias
+      layout:         tabular
+      actions:
+       _create:     { name: Cancelar}
+      object_actions:
+        agregar:
+    edit:
+        title: "Actualizar Nota y Estado"
+        display: [ result, libro, folio, fecha, fk_dcursarda_id ]
+

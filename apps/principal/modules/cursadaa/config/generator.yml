@@ -1,0 +1,33 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Cursada
+    theme:            default
+    fields:
+      id:                     { name: ID }
+      fk_alumno_id:           { name: Alumno }
+      matricula:              { name: Matricula }
+      fecha:                  { name: Fecha de Emisión }
+
+    list:
+      display:        [id, Alumno, fecha, matricula]
+      filters:        [_filtro_fk_alumno_id, matricula, fecha]
+      title:          Listado Cursadas
+      layout:         tabular
+      actions:
+       _create:     { name: Crear}
+      object_actions:
+        _edit:        ~
+        _delete:      ~
+      max_per_page:   10
+    edit:
+      title:          Detalle de Cursada
+      display:
+        "Encabezado":       [id, Alumno, fecha, matricula]
+        "Detalle":          [Matricula]
+      actions:
+       _list:              { name: Volver al listado }
+       _save_and_add:      { name: Guardar y agregar otro }
+       _delete:            { name: Borrar }
+       _save:              { name: Guardar}
+    

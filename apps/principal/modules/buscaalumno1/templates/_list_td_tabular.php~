@@ -1,0 +1,42 @@
+    <td><?php echo $alumno->getApellidoMaterno() ?></td>
+      <td><?php echo $alumno->getNroDocumento() ?></td>
+   <?php // $h44= sfPropelFinder::from('RelAlumnoDivision')->
+	 //where ('FkAlumnoId','like',$alumno->getId())->
+	 //find();
+	 //foreach ($h44 as $l44)  
+         //{
+	 //$divid= $l44->getFkDivisionId();
+         //} 
+         //$h55= sfPropelFinder::from('Division')->
+  	 //where ('Id','like',$divid)->
+	 //find();
+	 //foreach ($h55 as $l55)  
+         //{
+	 //$anio= $l55->getFkAnioId();
+          //} 
+    //$h66= sfPropelFinder::from('Anio')->
+	// where ('Id','like',$anio)->
+	 //find();
+	 //foreach ($h66 as $l66)  
+         //{
+         // $carrera = $l66->getFkCarreraId();
+         // $desanio = $l66->getDescripcion();
+         //} 
+       $h77= sfPropelFinder::from('Carrera')->
+	 where ('Id','like',$alumno->getFkCarreraId)->
+	 find();
+	 foreach ($h77 as $l77)  
+         {
+         $descarrera = $l77->getAbrev();
+         } 
+      ?>
+
+
+      <td><?php echo $alumno->getMatricula() ?></td>
+      <td><?php echo $descarrera ?></td>
+
+
+
+
+
+  

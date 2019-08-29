@@ -1,0 +1,67 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+      model_class:      Alumno
+      theme:            default
+      fields:
+            nombre: { name: Nombres , params: size=64 }
+            usuario_nombre: { name: Usuario Registrado , params: size=64 }
+            apellido: { name: Apellido , params: size=64 }
+            apellido_materno: { name: Apellido Mat. , params: size=64 }
+            fk_provincia_id: { name: Provincia }
+            fk_establecimiento_id: { name: Establecimiento }
+            fk_cuenta_id: { name: Cuenta }
+            fk_conceptobaja_id: { name: Concepto de Baja }
+            fk_tipodocumento_id: { name: Tipo de Documento }
+            fecha_nacimiento: { name: Fecha Nacimiento, params: withtime=false}
+            direccion: { name: Direcci&oacute;n , params: size=64}
+            ciudad: { name: Ciudad, params: size=64 }
+            codigo_postal: { name: CP, params: size=20}
+            telefono: { name: Tel&eacute;fono, params: size=20 }
+            sexo: { name: Sexo }
+            email: { name: Email , params: size=64 }
+            nro_documento:  { name: Nro. Documento, params: size=16 }
+            distancia_escuela: { name: Distancia de la escuela (cuadras) }
+            hermanos_escuela: { name: ¿Hermanos en la escuela? }
+            hijo_maestro_escuela: { name: ¿Alguno de sus padres es Maestro? }
+            certificado_medico: { name: ¿Trajo el certificado m&eacute;dico? }
+            activo: { name: ¿Est&aacute; activo? }
+            nombre_apellido: { name: Nombre }
+            division: { name: Divisi&oacute;n }
+            fk_pais_id: { name: Nacionalidad }
+            lugar_nacimiento: { name: Lugar de Nacimiento }
+            procedencia: { name: Procedencia }
+            observacion: { name: Observaci&oacute;n }
+            fk_estadoalumno_id: { name: Estado Alumno }
+            email_padre: {name: Email del Padre }
+      list:
+            title: " "
+            display: [=apellido, nombre, nro_documento, sexo, telefono, email, activo ]
+            filters:  [nombre, apellido, _division, nro_documento ]
+            object_actions:
+                _edit: -
+                _delete: -
+                irCuenta:  { name: Ir a Cuenta, action: irCuenta, icon: small/cuenta_go.png }
+                Vacunas: { name: Vacunas, action: vacunas, icon: small/vacuna.gif }
+                Salud: { name: Salud, action: legajosalud, icon: small/legajosalud.png }
+                asistencia: { name: Asistencia, action: asistencia, icon: small/asistencia.png }
+                legajo: { name: Legajo, action: legajo, icon: small/legajo.png }
+            actions:
+                _create: -
+            max_per_page: 10
+
+      edit:
+            title: " Inscripción de Alumnos "
+            fields:
+                 fk_provincia_id:   { params: include_custom=--Seleccione una Provincia--}
+ 
+            display:
+                "Informacion general":  [ apellido, nombre, usuario_nombre, _sexo, fk_tipodocumento_id, nro_documento, lugar_nacimiento, fecha_nacimiento, fk_pais_id, email, activo, fk_estadoalumno_id ]
+                "Donde vive": [direccion, ciudad, fk_provincia_id, codigo_postal, telefono]
+                "Otros": [ observacion]
+            actions:
+                _delete: -
+                _save: -
+                _list: -
+                _save_and_add: -
+

@@ -1,0 +1,22 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Comun
+    theme:            default
+    fields:
+      id:                     { name: ID }
+      nombre:                 { name: Descripción }
+      descripcion:            { name: Carrera }
+      anio:                   { name: Año }
+      orden:                  { name: Orden } 
+
+    list:
+      display:        [nombre, orden, anio, descripcion]
+      max_per_page:   12
+      title:          Lista de Materias
+      layout:         tabular
+      actions:
+       _create:     { name: Cancelar}
+      object_actions:
+        agregar:
+

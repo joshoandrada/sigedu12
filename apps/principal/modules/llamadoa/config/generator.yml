@@ -1,0 +1,26 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Llamadoa
+    theme:            default
+
+    fields:
+        turno: {name: Turno }
+        fecha_inicio: { params: date_format='dd/MM/yy' withtime=false }
+        fecha_final: { params: date_format='dd/MM/yy'  withtime=false }
+        llamado: {name: Llamado }
+        fk_llamados_id: {name: Llamado Actual }
+      
+    list:
+        title: LLamdos a Rendir
+        display: [ =turno, fecha_inicio, fecha_final, llamado]
+        object_actions:
+            _edit: -
+            _delete: -
+    edit:
+        title: Cambiar Llamado a Rendir
+        display: [ fk_llamados_id]
+    new:
+        title: LLamado a Rendir
+        display: [ =turno, fecha_inicio, fecha_final, llamado]
+

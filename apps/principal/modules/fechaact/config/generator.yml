@@ -1,0 +1,21 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Actividad
+    theme:            default
+    fields:
+      fecha:               { name: Fecha Acta }
+
+    list:
+      display:        [nombre]
+      filters:        [nombre]
+      max_per_page:   8
+      title:          Lista de Materias
+      layout:         tabular
+      actions:
+       _create:     { name: Cancelar}
+      object_actions:
+        agregar:
+    edit:
+        title: "Actualizar Fecha de Acta"
+        display: [ fecha ]

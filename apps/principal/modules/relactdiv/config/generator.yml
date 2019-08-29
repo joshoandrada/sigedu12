@@ -1,0 +1,22 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Relactividaddivision
+    theme:            default
+    fields:
+        fk_division_id: { name: Divisi&oacute;n }
+        fk_actividad_id: { name: Actividad }
+        division:   { name: Divisi&oacute;n}
+        id:   { name: Id} 
+    edit:
+        title: Asignar Divisi&oacute;n a Actividad
+        display: [ _fk_division_id, fk_actividad_id]
+    list:
+        title: Asignaci&oacute;n de divisi&oacute;n a Actividad - Listado
+        display: [id, actividad, division ]
+        object_actions:
+            _edit:      -
+            _delete:    -
+        max_per_page: 8
+        filters: [ fk_actividad_id, _filtro_fk_division_id ]
+        sort: [fk_division_id, fk_actividad_id]

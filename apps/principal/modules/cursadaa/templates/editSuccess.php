@@ -1,0 +1,25 @@
+<?php use_helper('Object', 'Validation', 'ObjectAdmin', 'I18N', 'Date') ?>
+
+<?php use_stylesheet('/sf/sf_admin/css/main') ?>
+
+<div id="sf_admin_container">
+
+
+<h1><?php echo __('Detalle de Cursada ', 
+array()).'N&#186: '.$cursada->getId() ?></h1>
+
+
+<div id="sf_admin_header">
+<?php include_partial('cursadaa/edit_header', array('cursada' => $cursada)) ?>
+</div>
+
+<div id="sf_admin_content">
+<?php include_partial('cursadaa/edit_messages', array('cursada' => $cursada, 'labels' => $labels)) ?>
+<?php include_partial('cursadaa/edit_form', array('cursada' => $cursada, 'labels' => $labels)) ?>
+</div>
+
+<div id="sf_admin_footer">
+<?php include_partial('cursadaa/edit_footer', array('cursada' => $cursada)) ?>
+</div>
+
+</div>

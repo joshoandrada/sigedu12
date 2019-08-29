@@ -1,0 +1,19 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+      model_class:      Llamadoacur
+      theme:            default
+      fields:
+            turno: { name: Turno }
+            fk_llamadoscur_id: { name: LLamado Actual }
+            llamado: { name: habilitar? }
+      list:
+            title: "Habilitar Alumno a Rendir o Cursar"
+            display: [ llamado ]
+      edit:
+            title: "Habilitacion a Cursar en Autogestion "
+            display:
+                " ":  [fk_llamadoscur_id,  llamado]
+            actions:
+                _save: -
+

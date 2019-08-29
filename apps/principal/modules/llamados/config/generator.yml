@@ -1,0 +1,25 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Llamados
+    theme:            default
+
+    fields:
+        turno: {name: Turno }
+        fecha_inicio: { params: date_format='dd/MM/yy' }
+        fecha_final: { params: date_format='dd/MM/yy' }
+        llamado: {name: Llamado }
+    list:
+        title: LLamdos a Rendir
+        display: [ =turno, fecha_inicio, fecha_final, llamado]
+        object_actions:
+            _edit: -
+            _delete: -
+    edit:
+        title: Llamado a Rendir
+        display: [ =turno, fecha_inicio, fecha_final, llamado]
+    new:
+        title: LLamado a Rendir
+        display: [ =turno, fecha_inicio, fecha_final, llamado]
+
+

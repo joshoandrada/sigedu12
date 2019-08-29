@@ -1,0 +1,22 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Neuro
+    theme:            default
+    fields:
+      id:                     { name: ID }
+      nombre:                 { name: Descripción }
+      fk_carrera_id:          { name: Carrera }
+      anio:                   { name: Año }
+      orden:                  { name: Orden } 
+
+    list:
+      display:        [orden, nombre, anio]
+      max_per_page:   36
+      title:          Lista de Materias
+      layout:         tabular
+      actions:
+       _create:     { name: Cancelar}
+      object_actions:
+        agregar:
+

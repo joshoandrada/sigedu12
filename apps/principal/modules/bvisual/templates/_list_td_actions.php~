@@ -1,0 +1,49 @@
+
+///////////////////////////////////////////////////////////
+<td>
+<?php $can=0;?>
+<ul class="sf_admin_td_actions">
+
+<?php $idact=$neuro->getOrden(); ?>
+<?php// $iddetalle=$neuro->getId(); ?>
+<?php $idal1= $sf_params->get('idal'); ?>
+
+
+<?php
+$ab =0;
+    $vu=sfPropelFinder::from('Detallecursada')->
+	where('FkAlumnoId','like',$idal1)->
+	where('FkActividadId','like',$idact)->
+        where('FkDcursadaId','like',1)->
+          _or('FkDcursadaId','like',5 )->
+          _or('FkDcursadaId','like',4 )->
+	find();
+     foreach ($vu as $cs1)
+       {
+       $ab =  $cs1->getFkDcursadaId();
+       }
+?>
+
+<? if ($ab ==1 ){?>
+<li><p style="color: #0000ff;"><?php echo "Regularizada";?></p>
+<?php// echo ' '.$regular.'  '.$idal1.'  '.$iddetalle;?></p>
+
+<?}else{?>
+
+<? if ($ab ==4 || $ab ==5 ){?>
+<li><p style="color: #0000ff;"><?php echo "Promocionada";?></p>
+<?php// echo ' '.$regular.'  '.$idal1.'  '.$iddetalle;?></p>
+
+<?}else{?>
+
+<li><?php echo button_to(('     Agregar'),'bvisual/agregavisual?idactividad='.$visual->getId().'&idcursada='.$sf_params->get('idcursada').'&orden='.$visual->getOrden(), array ('class' => 'sf_admin_action_create',))?></li>
+<?php echo ' '.$ab.'  '.$idal1.'  '.$idact;?>
+<?}?>
+<?}?>
+
+</ul>
+</td>
+
+
+
+

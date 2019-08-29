@@ -1,0 +1,21 @@
+# Archivo generado por el Instalador de Alba el %TIMESTAMP%
+dev:
+  propel:
+    param:
+      classname:    DebugPDO
+
+test:
+  propel:
+    param:
+      classname:    DebugPDO
+
+all:
+  propel:
+    class:          sfPropelDatabase
+    param:
+      dsn:          'mysql:dbname=idukaye1_sigedu;host=localhost'
+      username:     idukaye1_admin
+      password:     jesucristovive1308
+      enconding:    utf8
+      classname:    PropelPDO
+      datasource:   propel
